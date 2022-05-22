@@ -78,11 +78,11 @@ export class NotaFiscal {
         console.log("--------------------------------------------------------------------------------------------------------------------")
         console.log("Seq    Descrição                                                               QTD       Valor Unit         Preço   ")
         console.log("------------------------------------------------------------------------      -----     -------------     ----------")
-        for(let count = 0; count < this.items.length; count++){
-            let precoTotal =  this.items[count].getquantidade() * this.items[count].produto.getvalorUnitario()
+        for(let a = 0; a < this.items.length; a++){
+            let precoTotal =  this.items[a].getquantidade() * this.items[a].produto.getvalorUnitario()
             this.valorNota += precoTotal
             console.log("%i       %s                                                       %f            %f              %f  ",
-            this.items[count].getsequencial(), this.items[count].produto.getdescricao(), this.items[count].getquantidade(), this.items[count].produto.getvalorUnitario(), precoTotal)
+            this.items[a].getsequencial(), this.items[a].produto.getdescricao(), this.items[a].getquantidade(), this.items[a].produto.getvalorUnitario(), precoTotal)
         }
         console.log("--------------------------------------------------------------------------------------------------------------------")
         console.log("Valor Total:", this.valorNota)
