@@ -1,42 +1,41 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.Produto = void 0;
 //
 //
 //
 //
-var Produto = /** @class */ (function () {
+class Produto {
     /* Métodos */
     /* Método Construtor */
-    function Produto(id, codigo, descricao, valorUnitario) {
+    constructor(id, codigo, descricao, valorUnitario) {
         this.id = id;
         this.codigo = codigo;
         this.descricao = descricao;
         this.valorUnitario = valorUnitario;
     }
     /* Métodos Acessores */
-    Produto.prototype.getid = function () {
+    getid() {
         return this.id;
-    };
-    Produto.prototype.getdescricao = function () {
+    }
+    getdescricao() {
         return this.descricao;
-    };
-    Produto.prototype.getcodigo = function () {
+    }
+    getcodigo() {
         return this.codigo;
-    };
-    Produto.prototype.getvalorUnitario = function () {
+    }
+    getvalorUnitario() {
         return this.valorUnitario;
-    };
+    }
     /* Métodos Modificadores */
-    Produto.prototype.setdescricao = function (descricao) {
+    setdescricao(descricao) {
         this.descricao = descricao;
-    };
-    Produto.prototype.setcodigo = function (codigo) {
+    }
+    setcodigo(codigo) {
         this.codigo = codigo;
-    };
-    Produto.prototype.setvalorUnitario = function (valorUnitario) {
+    }
+    setvalorUnitario(valorUnitario) {
         this.valorUnitario = valorUnitario;
-    };
-    return Produto;
-}());
+    }
+}
 exports.Produto = Produto;

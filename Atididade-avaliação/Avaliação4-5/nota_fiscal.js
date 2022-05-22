@@ -1,10 +1,10 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotaFiscal = void 0;
-var NotaFiscal = /** @class */ (function () {
+class NotaFiscal {
     /* Métodos */
     /* Método Construtor */
-    function NotaFiscal(id, codigo, cliente) {
+    constructor(id, codigo, cliente) {
         this.id = id;
         this.codigo = codigo;
         this.data = new Date();
@@ -13,40 +13,58 @@ var NotaFiscal = /** @class */ (function () {
         this.items = new Array();
     }
     /* Métodos Acessores */
-    NotaFiscal.prototype.getid = function () {
+    getid() {
         return this.id;
-    };
-    NotaFiscal.prototype.getcodigo = function () {
+    }
+    getcodigo() {
         return this.codigo;
-    };
-    NotaFiscal.prototype.getdata = function () {
+    }
+    getdata() {
         return this.data;
-    };
+    }
     /* Métodos Modificadores */
-    NotaFiscal.prototype.setcodigo = function (codigo) {
+    setcodigo(codigo) {
         this.codigo = codigo;
-    };
-    NotaFiscal.prototype.setdata = function (data) {
+    }
+    setdata(data) {
         this.data = data;
-    };
-    NotaFiscal.prototype.adicionarItem = function (item) {
+    }
+    adicionarItem(item) {
         this.items.push(item);
         this.valorNota += item.valor;
-    };
+    }
     // Percorrer o array items e calcular o valor total da NotaFiscal
-    NotaFiscal.prototype.calcularValorNotaFiscal = function () {
-        var valorCalculado = 0;
+    calcularValorNotaFiscal() {
+        let valorCalculado = 0;
         return valorCalculado;
-    };
+    }
     // Imprimir a NotaFiscal conforme o Layout definido
-    NotaFiscal.prototype.IMPRIMIR_NotaFiscal = function () {
-        var soma = 0;
-        for (var count = 0; count < this.items.length; count++) {
-            var quantia = this.items[count].getquantidade() * this.items[count].getvalor();
-            soma += quantia;
+    IMPRIMIR_NotaFiscal() {
+        var data = new Date();
+        console.log("--------------------------------------------------------------------------------------------------------------------");
+        console.log("NOTA FISCAL                                                                                                   ", data);
+        console.log("Cliente:", this.cliente.getcodigo(), "      Nome:", this.cliente.getnome());
+        console.log("CPF:", this.cliente.getcnpjcpf());
+        console.log("--------------------------------------------------------------------------------------------------------------------");
+        console.log("ITENS");
+        console.log("--------------------------------------------------------------------------------------------------------------------");
+        console.log("Seq    Descrição                                                               QTD       Valor Unit         Preço   ");
+        console.log("------------------------------------------------------------------------      -----     -------------     ----------");
+        for (let count = 0; count < this.items.length; count++) {
+            let precoTotal = this.items[count].getquantidade() * this.items[count].produto.getvalorUnitario();
+            this.valorNota += precoTotal;
+            console.log("%i       %s                                                       %f            %f              %f  ", this.items[count].getsequencial(), this.items[count].produto.getdescricao(), this.items[count].getquantidade(), this.items[count].produto.getvalorUnitario(), precoTotal);
         }
-        console.log("O valor total de suas compras é de: R$ " + soma);
-    };
-    return NotaFiscal;
-}());
+        console.log("--------------------------------------------------------------------------------------------------------------------");
+        console.log("Valor Total:", this.valorNota);
+    }
+    SomaTotal() {
+        let total = 0;
+        for (let i = 0; i < this.items.length; i++) {
+            let valor = this.items[i].getquantidade() * this.items[i].getvalor();
+            total += valor;
+        }
+        console.log("A QUANTIA EM DINHEIRO TOTAL DA SUA COMPRA: R$ " + total);
+    }
+}
 exports.NotaFiscal = NotaFiscal;

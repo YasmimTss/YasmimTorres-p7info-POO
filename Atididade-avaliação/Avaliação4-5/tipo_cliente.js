@@ -3,7 +3,7 @@
 //
 //
 //
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.TipoCliente = void 0;
 var TipoCliente;
 (function (TipoCliente) {

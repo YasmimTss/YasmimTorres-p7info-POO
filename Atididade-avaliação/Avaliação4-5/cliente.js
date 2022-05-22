@@ -3,12 +3,12 @@
 //
 //
 //
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.Cliente = void 0;
-var Cliente = /** @class */ (function () {
+class Cliente {
     /* Métodos */
     /* Método Construtor */
-    function Cliente(id, nome, codigo, cnpjcpf, tipo) {
+    constructor(id, nome, codigo, cnpjcpf, tipo) {
         this.id = id;
         this.nome = nome;
         this.codigo = codigo;
@@ -16,34 +16,33 @@ var Cliente = /** @class */ (function () {
         this.tipo = tipo;
     }
     /* Métodos Acessores */
-    Cliente.prototype.getid = function () {
+    getid() {
         return this.id;
-    };
-    Cliente.prototype.getnome = function () {
+    }
+    getnome() {
         return this.nome;
-    };
-    Cliente.prototype.getcodigo = function () {
+    }
+    getcodigo() {
         return this.codigo;
-    };
-    Cliente.prototype.getcnpjcpf = function () {
+    }
+    getcnpjcpf() {
         return this.cnpjcpf;
-    };
-    Cliente.prototype.gettipo = function () {
+    }
+    gettipo() {
         return this.tipo;
-    };
+    }
     /* Métodos Modificadores */
-    Cliente.prototype.setnome = function (nome) {
+    setnome(nome) {
         this.nome = nome;
-    };
-    Cliente.prototype.setcodigo = function (codigo) {
+    }
+    setcodigo(codigo) {
         this.codigo = codigo;
-    };
-    Cliente.prototype.setcnpjcpf = function (cnpjcpf) {
+    }
+    setcnpjcpf(cnpjcpf) {
         this.cnpjcpf = cnpjcpf;
-    };
-    Cliente.prototype.settipo = function (tipo) {
+    }
+    settipo(tipo) {
         this.tipo = tipo;
-    };
-    return Cliente;
-}());
+    }
+}
 exports.Cliente = Cliente;

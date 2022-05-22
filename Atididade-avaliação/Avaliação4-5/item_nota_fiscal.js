@@ -1,10 +1,10 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.ItemNotaFiscal = void 0;
-var ItemNotaFiscal = /** @class */ (function () {
+class ItemNotaFiscal {
     /* Métodos */
     /* Método Construtor */
-    function ItemNotaFiscal(id, sequencial, quantidade, produto) {
+    constructor(id, sequencial, quantidade, produto) {
         this.id = id;
         this.sequencial = sequencial;
         this.quantidade = quantidade;
@@ -12,30 +12,29 @@ var ItemNotaFiscal = /** @class */ (function () {
         this.valor = 0.0;
     }
     /* Métodos Acessores */
-    ItemNotaFiscal.prototype.getid = function () {
+    getid() {
         return this.id;
-    };
-    ItemNotaFiscal.prototype.getsequencial = function () {
+    }
+    getsequencial() {
         return this.sequencial;
-    };
-    ItemNotaFiscal.prototype.getquantidade = function () {
+    }
+    getquantidade() {
         return this.quantidade;
-    };
-    ItemNotaFiscal.prototype.getproduto = function () {
+    }
+    getproduto() {
         return this.produto;
-    };
-    ItemNotaFiscal.prototype.getvalor = function () {
+    }
+    getvalor() {
         return this.valor;
-    };
+    }
     /* Métodos Modificadores */
-    ItemNotaFiscal.prototype.setsequencial = function (sequencial) {
+    setsequencial(sequencial) {
         this.sequencial = sequencial;
-    };
-    ItemNotaFiscal.prototype.valorItemNotaFiscal = function () {
+    }
+    valorItemNotaFiscal() {
         this.valor = this.getproduto().getvalorUnitario();
-    };
-    return ItemNotaFiscal;
-}());
+    }
+}
 exports.ItemNotaFiscal = ItemNotaFiscal;
 //
 //

@@ -68,13 +68,34 @@ export class NotaFiscal {
     // Imprimir a NotaFiscal conforme o Layout definido
     
     IMPRIMIR_NotaFiscal(): void {
-        let soma = 0
+        var data = new Date();
+        console.log("--------------------------------------------------------------------------------------------------------------------")
+        console.log("NOTA FISCAL                                                                                                   ", data)
+        console.log("Cliente:",this.cliente.getcodigo(), "      Nome:",this.cliente.getnome() )
+        console.log("CPF:",this.cliente.getcnpjcpf())
+        console.log("--------------------------------------------------------------------------------------------------------------------")
+        console.log("ITENS")
+        console.log("--------------------------------------------------------------------------------------------------------------------")
+        console.log("Seq    Descrição                                                               QTD       Valor Unit         Preço   ")
+        console.log("------------------------------------------------------------------------      -----     -------------     ----------")
         for(let count = 0; count < this.items.length; count++){
-            let quantia =  this.items[count].getquantidade() * this.items[count].getvalor()
-            soma += quantia
+            let precoTotal =  this.items[count].getquantidade() * this.items[count].produto.getvalorUnitario()
+            this.valorNota += precoTotal
+            console.log("%i       %s                                                       %f            %f              %f  ",
+            this.items[count].getsequencial(), this.items[count].produto.getdescricao(), this.items[count].getquantidade(), this.items[count].produto.getvalorUnitario(), precoTotal)
+        }
+        console.log("--------------------------------------------------------------------------------------------------------------------")
+        console.log("Valor Total:", this.valorNota)
+    }
+
+    SomaTotal(): void {
+        let total = 0
+        for(let i = 0; i < this.items.length; i++){
+            let valor =  this.items[i].getquantidade() * this.items[i].getvalor()
+            total += valor
         }
 
-        console.log("O valor total de suas compras é de: R$ " + soma)
+        console.log("A QUANTIA EM DINHEIRO TOTAL DA SUA COMPRA: R$ " + total)
     }
 
     
