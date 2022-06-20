@@ -55,7 +55,7 @@ export class NotaFiscal {
     }
 
     // Percorrer o array items e calcular o valor total da NotaFiscal
-    calcularValorNotaFiscal() : number {
+    calcularValorNotaFiscal() : void {
         
         let valorCalculado = 0;
         for(let i = 0; i < this.items.length; i++){
@@ -91,8 +91,7 @@ export class NotaFiscal {
         }
         console.log("--------------------------------------------------------------------------------------------------------------------")
         console.log("Valor Total:", this.valorNota)
-        
-        return ValorCauculado;
+       
     }
 
   
