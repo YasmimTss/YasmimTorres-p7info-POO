@@ -23,7 +23,6 @@ export class NotaFiscal {
         this.valorNota =0.0;
         this.items = new Array<ItemNotaFiscal>();
 
-
     }
 
     /* Métodos Acessores */
@@ -48,7 +47,6 @@ export class NotaFiscal {
         this.data = data;
     }
 
-     
 
     adicionarItem(item: ItemNotaFiscal) {
         this.items.push(item);
@@ -58,8 +56,15 @@ export class NotaFiscal {
 
     // Percorrer o array items e calcular o valor total da NotaFiscal
     calcularValorNotaFiscal() : number {
+        
         let valorCalculado = 0;
+        for(let i = 0; i < this.items.length; i++){
+            let valor =  this.items[i].getquantidade() * this.items[i].getvalor()
+            total += valor
+        }
 
+             console.log("A QUANTIA EM DINHEIRO TOTAL DA SUA COMPRA: R$ " + total)
+    }
 
         return valorCalculado;
 
@@ -86,17 +91,9 @@ export class NotaFiscal {
         }
         console.log("--------------------------------------------------------------------------------------------------------------------")
         console.log("Valor Total:", this.valorNota)
+        
+        return ValorCauculado;
     }
 
-    SomaTotal(): void {
-        let total = 0
-        for(let i = 0; i < this.items.length; i++){
-            let valor =  this.items[i].getquantidade() * this.items[i].getvalor()
-            total += valor
-        }
-
-        console.log("A QUANTIA EM DINHEIRO TOTAL DA SUA COMPRA: R$ " + total)
-    }
-
-    
+  
 }
